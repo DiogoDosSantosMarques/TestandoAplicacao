@@ -1,12 +1,13 @@
-export const Cliente = {
-    senha: null,
-    email: null,
-    nome_usuario: null,
+export const Cliente = (senha, email, nome_usuario) => {
+  return {
+    senha,
+    email,
+    nome_usuario,
   
-    criar(senha, email, nome_usuario) {
-      this.senha = senha;
-      this.email = email;
-      this.nome_usuario = nome_usuario;
+    criar(novaSenha, novoEmail, novoNomeUsuario) {
+      this.senha = novaSenha;
+      this.email = novoEmail;
+      this.nome_usuario = novoNomeUsuario;
     },
   
     ler() {
@@ -17,10 +18,10 @@ export const Cliente = {
       };
     },
   
-    atualizar(senha = null, email = null, nome_usuario = null) {
-      if (senha !== null) this.senha = senha;
-      if (email !== null) this.email = email;
-      if (nome_usuario !== null) this.nome_usuario = nome_usuario;
+    atualizar(novaSenha = null, novoEmail = null, novoNomeUsuario = null) {
+      if (novaSenha !== null) this.senha = novaSenha;
+      if (novoEmail !== null) this.email = novoEmail;
+      if (novoNomeUsuario !== null) this.nome_usuario = novoNomeUsuario;
     },
   
     deletar() {
@@ -29,7 +30,4 @@ export const Cliente = {
       this.nome_usuario = null;
     }
   };
-
-  
-
-
+};

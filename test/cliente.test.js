@@ -2,6 +2,7 @@ import { describe, it, expect } from "vitest";
 import {Cliente} from '../entities/Cliente'
 
 
+
 describe('Cliente', () => {
     it('Criar um Cliente corretamente'), () => {
 
@@ -28,14 +29,14 @@ describe('Cliente', () => {
 
         const cliente = new Object.create(Cliente)
 
-        cliente.criar('dioguinho', "dioguinho@gmail.com", "Diogo Marques")
+        cliente.criar("dioguinho", "dioguinho@gmail.com", "Diogo Marques")
 
-        const atributos = cliente.ler()
+        const ler = cliente.ler()
 
 
-        expect(atributos.senha).toBe('dioguinho')
-        expect(atributos.email).toBe('dioguinho@gmail.com')
-        expect(atributos.nome_usuario).toBe("Diogo Marques")
+        expect(ler.senha).toBe('dioguinho')
+        expect(ler.email).toBe('dioguinho@gmail.com')
+        expect(ler.nome_usuario).toBe("Diogo Marques")
 
     }
 
@@ -45,20 +46,20 @@ describe('Cliente', () => {
         const cliente = Object.create(Cliente)
 
         cliente.criar('dioguinho', "dioguinho@gmail.com", "Diogo Marques")
-        cliente.atualizar(null, "di@gmail.com")
+        cliente.atualizar(null, null, "Diogo Dos Santos Marques")
 
         const parcialmenteAtualizado = cliente.ler()
 
         expect(parcialmenteAtualizado.senha).toBe('dioguinho')
         expect(parcialmenteAtualizado.email).toBe('di@gmail.com')
-        expect(parcialmenteAtualizado.nome_usuario).toBe('Diogo Marques')
+        expect(parcialmenteAtualizado.nome_usuario).toBe('Diogo Dos Santos Marques')
 
     }
 
 
     it("Deletar um Cliente", () => {
 
-        const cliente = Object.create(Cliente)
+        const cliente = Cliente()
 
         cliente.criar('dioguinho', "dioguinho@gmail.com", "Diogo Marques")
 

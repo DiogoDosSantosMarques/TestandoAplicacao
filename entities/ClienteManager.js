@@ -1,4 +1,4 @@
-const ClienteManager = {
+export const ClienteManager = {
     
     clientes: [],
 
